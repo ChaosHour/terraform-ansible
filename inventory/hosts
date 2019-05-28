@@ -1,0 +1,17 @@
+#
+# Map the ec2 groups (from the dynamic inventory ec2.py) to our groups.
+# This merges the static and dynamic inventory.
+#
+[localhost]
+127.0.0.1 ansible_connection=local
+
+
+[pg]
+tag_Name_pgbouncer_node ansible_hosts=
+
+
+[pg:vars]
+ansible_ssh_private_key_file=~/.ssh/xxxxxx.pem
+ansible_user=centos
+ansible_port=22
+

@@ -1,0 +1,44 @@
+---
+- hosts: tag_Name_pgbouncer_node 
+  remote_user: centos
+  become: yes
+  become_user: root
+  become_method: sudo
+  gather_facts: False
+  tasks:
+
+   - name: Clean yum db
+     command: /usr/bin/yum clean all
+
+
+   - name: update yum cache
+     command: /usr/bin/yum makecache
+
+   - name: update yum
+     yum: 
+      update_only:
+
+
+   - name: install some base packages | AWS
+     yum: name={{ item }}
+     with_items:
+       - nmap-ncat.x86_64
+       - wget
+       - curl
+       - screen
+       - rsync
+       - openssh-clients
+       - socat
+       - vim
+       - git
+       - kernel-devel
+       - "@Development tools"
+       - openssl-static.x86_64
+       - libevent-devel.x86_64
+       - postgresql.x86_64
+       - epel-release
+       - https://download.postgresql.org/pub/repos/yum/11/redhat/rhel-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+
+   - name: install pgbouncer 
+     yum: 
+       name: pgbouncer

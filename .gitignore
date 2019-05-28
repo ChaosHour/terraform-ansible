@@ -1,0 +1,44 @@
+.terraform
+terraform.tfstate
+*.tfstate*
+terraform.tfvars
+terraform.tfvars
+.vars
+.vagrant
+.terraform
+*.DS_Store*
+
+# Installer logs
+pip-log.txt
+ansible.log
+build.retry
+
+# Ansible
+*.retry
+
+# Local inventory files
+/inventory/*.local
+
+# Local directories
+/*.local/
+
+# Local password files
+*.pass
+*.password
+*.password_file
+
+# C extensions
+*.so
+
+# Mac garbage
+.DS_Store
+
+# Ansible retry
+*.retry
+
+# Backup garbage
+*~
+*.bak
+*.swp
+\#*\#
+\.\#*
