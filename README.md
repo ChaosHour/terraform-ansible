@@ -3,8 +3,7 @@
 Steps to use after you have cloned the repo.
 
 ```
-Fill in the values in the variables.tf file with your VPC,SG,SUBNET 
-and pem key created and stored in AWS under your profile.
+Fill in the values in the variables.tf file with your VPC,SG,SUBNET and pem key created and stored in AWS under your profile.
 
 If you are using a private ip rename the ec2.ini-private-ips in the inventory dir to ec2.ini. 
 
