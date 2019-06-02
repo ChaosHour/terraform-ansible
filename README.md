@@ -26,3 +26,37 @@ If you have no errors, warnings or issue at this point you can now run
 terraform plan
 terraform apply
 ```
+
+Get you AWS private IP from Ansible and Terraform:
+
+```[terraform-ansible] ansible -u centos -i inventory pgbouncer_node  -m ping
+
+pgbouncer_node | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+
+
+
+Example usage To get private_ip:
+
+ansible -i inventory 'ec2,!127.0.0.1' -l pgbouncer_node -m debug -a var="{{ 'ec2_tag_Name, ec2_private_ip_address' }}"
+
+
+pgbouncer_node | SUCCESS => {
+    "ec2_tag_Name, ec2_private_ip_address": "(u'pgbouncer_node', u'10.15.x.x')"
+}
+
+
+terraform show | grep -i ip
+  associate_public_ip_address = false
+  ipv6_address_count = 0
+  ipv6_addresses.# = 0
+  private_dns = ip-10-15-x-x.us-west-1.compute.internal
+  private_ip = 10.15.x.x
+  public_ip =
+
+```
