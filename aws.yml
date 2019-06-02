@@ -1,5 +1,5 @@
 ---
-- hosts: tag_Name_pgbouncer_node 
+- hosts: pgbouncer_node 
   remote_user: centos
   become: yes
   become_user: root
