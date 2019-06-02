@@ -13,7 +13,7 @@ If using public_ips then rename ec2.ini-public_ips to ec2.ini
 Make sure to look through the files like ansible.cfg and make changes 
 were needed.
 
-inventory/hosts file is good just completed the pem key with yours.
+inventory/hosts file is good just fill in the pem key with yours.
 
 
 ```
