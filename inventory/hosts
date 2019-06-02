@@ -7,7 +7,7 @@
 
 
 [pg]
-tag_Name_pgbouncer_node ansible_hosts=
+pgbouncer_node ansible_hosts=
 
 
 [pg:vars]
