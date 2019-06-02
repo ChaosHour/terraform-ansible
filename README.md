@@ -27,7 +27,7 @@ terraform plan
 terraform apply
 ```
 
-Get you AWS private IP from Ansible and Terraform:
+Get your AWS private_ip from Ansible and Terraform:
 
 ```[terraform-ansible] ansible -u centos -i inventory pgbouncer_node  -m ping
 
